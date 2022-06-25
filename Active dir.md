@@ -1,4 +1,4 @@
-## Active Directory Walk-through.
+## Active Directory Setup and Remote Connection.
 ### Enable Remote connection on the Server Machine
 ```shell
 Enable-PSRemoting
