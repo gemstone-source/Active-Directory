@@ -1,6 +1,6 @@
 ## Active Directory Setup and Remote Connection.
 ### Enable Remote connection on the Server Machine
-```shell
+```console
 Enable-PSRemoting
 ```
 
