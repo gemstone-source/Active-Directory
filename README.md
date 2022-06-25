@@ -1,2 +1,2 @@
 # Active-Directory
-Studying on some cool new windows stuffs hope they will help me in comming days.
+Studying about Windows Server and Active Directory. Setup used is Windows 2019 as Server Machine and Windows 11 as Client an Management Machine.
