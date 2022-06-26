@@ -263,3 +263,4 @@ Loopback Pseudo-Interface 1          1 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff:
 ```console
 PS C:\Users\local_admin> Add-Computer -DomainName xyz.com -Credential xyz\Administrator -Force -Restart
 ```
+Now we are able to connect to the `xyz.com` domain though we have not created any user in domain.
