@@ -1,16 +1,16 @@
 ## Active Directory Setup and Remote Connection.
 ### Enable Remote connection on the Server Machine
-```console
+```shell
 Enable-PSRemoting
 ```
 
 ### On Client Machine.
 **Add user to trusted hosts.**
-```console
+```shell
 get-item wsman:\localhost\Client\TrustedHosts
 ```
 **Result.**
-```console
+```shell
 Start WinRM Service
 WinRM service is not started currently. Running this command will start the WinRM service.
 
@@ -26,7 +26,7 @@ At line:1 char:1
 
 **The above commands did not succeed, but it can be solved by starting again terminal with admin privileges and type the following commands.**
 
-```console
+```shell
 PS C:\Users\local_admin> get-item wsman:\localhost
 
 Start WinRM Service
@@ -45,13 +45,13 @@ localhost                                     Container
 
 **Start WinRM Service**
 
-```console
+```shell
 PS C:\Users\local_admin> Start-Service WinRM
 ```
 
 **Continue**
 
-```console
+```shell
 PS C:\Users\local_admin> ls wsman:\localhost
 
 
@@ -73,7 +73,7 @@ Container       ClientCertificate
 
 **Continue**
 
-```console
+```shell
 PS C:\Users\local_admin> ls wsman:\localhost\Client
 
 
@@ -91,7 +91,7 @@ System.String   TrustedHosts
 
 **Continue**
 
-```console
+```shell
 PS C:\Users\local_admin> ls wsman:\localhost\Client\TrustedHosts
 
 
@@ -104,13 +104,13 @@ System.String   TrustedHosts
 #### Connect to Remote Machine.
 **Set  Value of the remote Machine IP Address.**
 
-```console
+```shell
 PS C:\Users\local_admin> set-item wsman:\localhost\Client\TrustedHosts -value  192.168.225.131
 ```
 
 **Set New Session.**
 
-```console
+```shell
 PS C:\Users\local_admin> New-PSSession -ComputerName 192.168.225.131 -Credential (Get-Credential)
 
 cmdlet Get-Credential at command pipeline position 1
@@ -123,7 +123,7 @@ Credential
 ```
 
 **Connect to  Remote via Session  Number.**
-```console
+```shell
 PS C:\Users\local_admin> Enter-PSSession 5
 [192.168.225.131]: PS C:\Users\Administrator\Documents> whoami
 win-4tkcb5o73s1\administrator
@@ -131,7 +131,7 @@ win-4tkcb5o73s1\administrator
 
 **Alternatively you can use the following command to connect direct to the remote machine**
 
-```console
+```shell
 PS C:\Users\local_admin> Enter-PSSession 192.168.225.131 -Credential (Get-Credential)
 ```
 ## Install Domain Controller.
@@ -141,12 +141,12 @@ PS C:\Users\local_admin> Enter-PSSession 192.168.225.131 -Credential (Get-Creden
 	- Change the DNS server to our own IP Address.
 	
 2. Install Active Directory Windows Feature.
-```console
+```shell
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 ```
 
 3. Import module for the powershell on the Server machine.
-```console
+```shell
 import-Module ADDSDeployment
 ```
 
@@ -154,7 +154,7 @@ import-Module ADDSDeployment
 
 Provide the name for your Domain.
 
-```console
+```shell
 PS C:\Users\Administrator> Install-ADDSForest
 
 cmdlet Install-ADDSForest at command pipeline position 1
@@ -171,7 +171,7 @@ Do you want to continue with this operation?
 ### Change DNS Server Address on the Server Machine.
 1. Check for the IPAddress of the Server.
 
-```console
+```shell
 PS C:\Users\Administrator> Get-NetIPAddress -IPAddress 192.168.225.155
 
 IPAddress         : 192.168.225.155
@@ -191,7 +191,7 @@ PolicyStore       : ActiveStore
 
 2. Check the Index of Interface to see if the address match to that of the server.
 
-```console
+```shell
 PS C:\Users\Administrator> Get-DNSClientServerAddress
 
 InterfaceAlias               Interface Address ServerAddresses
@@ -205,13 +205,13 @@ Loopback Pseudo-Interface 1          1 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff:
 
 3. Change the IPAddress of the specified index number for interface.
 
-```console
+```shell
 PS C:\Users\Administrator> Set-DNSClientServerAddress -InterfaceIndex 5 -ServerAddresses 192.168.225.155
 ```
 
 4. Verify again to see if the index and the IPAddress match the DNS IPAddress.
 
-```console
+```shell
 PS C:\Users\Administrator> Get-DNSClientServerAddress
 
 InterfaceAlias               Interface Address ServerAddresses
@@ -226,7 +226,7 @@ Loopback Pseudo-Interface 1          1 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff:
 ### Power up Client Machine to connect to the domain.
 1. Check for the IPAddress of the Server.
 
-```console
+```shell
 PS C:\Users\local_admin> Get-DNSClientServerAddress
 
 InterfaceAlias               Interface Address ServerAddresses
@@ -240,13 +240,13 @@ Loopback Pseudo-Interface 1          1 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff:
 
 2. Change the IPAddress of the specified index number for interface.
 
-```console
+```shell
 Set-DNSClientServerAddress -InterfaceIndex 13 -ServerAddresses 192.168.225.155
 ```
 
 3. Verify again to see if the index and the IPAddress match the DNS IPAddress.
 
-```console
+```shell
 PS C:\Users\local_admin> Get-DNSClientServerAddress
 
 InterfaceAlias               Interface Address ServerAddresses
@@ -260,7 +260,7 @@ Loopback Pseudo-Interface 1          1 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff:
 
 5. Connect to Domain
 
-```console
+```shell
 PS C:\Users\local_admin> Add-Computer -DomainName xyz.com -Credential xyz\Administrator -Force -Restart
 ```
 Now we are able to connect to the `xyz.com` domain though we have not created any user in domain.
