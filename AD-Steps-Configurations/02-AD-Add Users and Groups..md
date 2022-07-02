@@ -1,5 +1,5 @@
 ## Creating Users And Groups.
-In order to add a large number of users in Active Directory, there should be database which stores user details and script which will help the automation process of creating new users and add them into their specific groups. To do this a `Json`  and `poweshell` file with  user information was created. `Json` file acts as a database with user details while `Powershell` script is used to automate the whole proccess.
+In order to add a large number of users in Active Directory, there should be database which stores user details and script which will help the automation process of creating new users and add them into their specific groups. To do this a `Json`  and `Poweshell` file with  user information was created. `Json` file acts as a database with user details while `Powershell` script is used to automate the whole proccess.
 
 1. **Json** file contains the followings:
 	- [ ] **Domain name.**
@@ -14,12 +14,12 @@ In order to add a large number of users in Active Directory, there should be dat
 	- [ ] It takes an argument to pass the Json file.
 	- [ ] Create new Active Directory Group for users.
 	- [ ] Create new Active Directory Users.
-	- [ ] Add User to the his/her appropriate group.
+	- [ ] Add User to his/her appropriate group.
 	- [ ] Converts the the data FromJson.
 	- [ ] Create Active Directory Users recursively.
 	- [ ] Create Active Directory Groups recursively.
 	
- You can check both `Json` and `Powershell` scripts int the following folder [code](https://github.com/gemstone-source/Active-Directory/tree/main/code).
+ You can check both `Json` and `Powershell` scripts in the following folder [code](https://github.com/gemstone-source/Active-Directory/tree/main/code).
  
 **_Remember:_** _All  codes were written in the Management Machine which is GUI Machine._
 
