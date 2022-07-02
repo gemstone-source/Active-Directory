@@ -19,7 +19,7 @@ In order to add a large of users in Active Directory there should a script which
 	- [ ] Create Active Directory Users recursively.
 	- [ ] Create Active Directory Groups recursively.
 	
- You can check both `Json` and `Powershell` scripts int the following folder [code](https).
+ You can check both `Json` and `Powershell` scripts int the following folder [code](https://github.com/gemstone-source/Active-Directory/tree/main/code).
  
 **_Remember:_** _All  codes were written in the Management Machine which is GUI Machine._
 
