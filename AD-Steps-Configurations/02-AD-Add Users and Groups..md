@@ -1,5 +1,5 @@
 ## Creating Users And Groups.
-In order to add a large of users in Active Directory there should a script which will help the automation of things. To do this a `json`  and `poweshell`  file with  user information was created. 
+In order to add a large number of users in Active Directory, there should be database which stores user details and script which will help the automation process of creating new users and add them into their specific groups. To do this a `Json`  and `poweshell` file with  user information was created. `Json` file acts as a database with user details while `Powershell` script is used to automate the whole proccess.
 
 1. **Json** file contains the followings:
 	- [ ] **Domain name.**
