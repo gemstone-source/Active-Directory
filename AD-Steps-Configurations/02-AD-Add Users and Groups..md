@@ -21,7 +21,7 @@ In order to add a large number of users in Active Directory, there should be dat
 	
  You can check both `Json` and `Powershell` scripts in the following folder [code](https://github.com/gemstone-source/Active-Directory/tree/main/code).
  
-**_Remember:_** _All  codes were written in the Management Machine which is GUI Machine._
+**_Remember:_** _All  codes were written in the Management Machine which is Windows 11 GUI Machine._
 
 ### Connect to Remote Server through Management Machine.
 #### Create variables for easy connection in next time.
@@ -29,7 +29,7 @@ In order to add a large number of users in Active Directory, there should be dat
 ```
 $dc = New-PSSession 192.168.225.155 -Credential (Get-Credential)^C
 ```
-2. Create variable for Credentials.
+2. Create variable that accepts Remote Machine Credentials.
 ```
 $creds = (Get-Credential)
 ```
@@ -38,7 +38,7 @@ $creds = (Get-Credential)
 $dc = New-PSSession 192.168.225.155 -Credential $creds
 ```
 #### Enter into Remote Machine via Session.
-1. Change New-PSSession to Enter-PSSession.
+1. Change `New-PSSession` to `Enter-PSSession`.
 ```
 $dc = Enter-PSSession 192.168.225.155 -Credential $creds
 ```
@@ -51,7 +51,7 @@ PS C:\Users\local_admin\Desktop\Active Directory\code> cp .\gen_ad.ps1 -ToSessio
 PS C:\Users\local_admin\Desktop\Active Directory\code> Enter-PSSession $dc
 [192.168.225.155]: PS C:\Users\Administrator\Documents> 
 ```
-4. Navigate to Tasks directory where you have uploaded `Json` and `Powershell` script.
+4. Navigate to Tasks directory where `Json` and `Powershell` script have been uploaded.
 ```
 [192.168.225.155]: PS C:\Users\Administrator\Documents> cd C:\Windows\Tasks
 
@@ -60,16 +60,16 @@ PS C:\Users\local_admin\Desktop\Active Directory\code> Enter-PSSession $dc
 	Directory: C:\Windows\Tasks
 
 Mode LastWriteTime Length Name
-
 ---- ------------- ------ ----
 
 -a---- 6/30/2022 8:54 AM 459 ad_schema.json
 
 -a---- 6/30/2022 8:51 AM 1617 gen_ad.ps1
 ```
-Both files can be seen as succeed uploaded to our remote Machine.
+Both files can be seen as successfully uploaded to remote Machine.
 
 #### Ad Users to Active Directory.
+Execute `Powershell` script and pass `Json` file as an argument.
 ```
 [192.168.225.155]: PS C:\Windows\Tasks> .\gen_ad.ps1 .\ad_schema.json
 
