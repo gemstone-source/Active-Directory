@@ -172,5 +172,6 @@ SID               : S-1-5-21-2354715860-4278133880-137312399-1613
 ```
 
 #### Connect to Domain.
-Start up any new Machine which is connected to the Domain and login as User `bob` or `alice` with password `P@ssw0rd789`
+Start up any new Machine which is connected to the Domain and login as User `bob` or `alice` with password `P@ssw0rd789`.
+Then All Domain users can login in any Machine that is joinned to the `xyz.com` Domain.
 
