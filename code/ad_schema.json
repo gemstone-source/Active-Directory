@@ -1,13 +1,28 @@
-{
+{   "domain":"xyz.com",
+    "groups":[
+        {
+            "name":"Employee"
+        }
+    ],
+
     "users": [
         {
-            "firstname":"Julius",
-            "lastname":"Soraely",
-            "password":"anything",
+            "name":"Alice Lice",
+            "password":"P@ssw0rd789",
+            "groups":[
+                "Employee"
+            ]
+             
+        },
+        {
+            "name":"Bob Ob",
+            "password":"P@ssw0rd789",
+            "groups":[
+                "Employee"
+            ]
              
         }
     ]
 }
 
 
-$dc = New-PSSession 192.168.225.155 -Credential (Get-Credential)

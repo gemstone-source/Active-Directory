@@ -241,7 +241,7 @@ Loopback Pseudo-Interface 1          1 IPv6    {fec0:0:0:ffff::1, fec0:0:0:ffff:
 2. Change the IPAddress of the specified index number for interface.
 
 ```
-Set-DNSClientServerAddress -InterfaceIndex 13 -ServerAddresses 192.168.225.155
+PS C:\Users\local_admin> Set-DNSClientServerAddress -InterfaceIndex 13 -ServerAddresses 192.168.225.155
 ```
 
 3. Verify again to see if the index and the IPAddress match the DNS IPAddress.
