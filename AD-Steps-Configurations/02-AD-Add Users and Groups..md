@@ -21,7 +21,7 @@ In order to add a large number of users in Active Directory, there should be dat
 	
  You can check both `Json` and `Powershell` scripts in the following folder [code](https://github.com/gemstone-source/Active-Directory/tree/main/code).
  
-**_Remember:_** _All  codes were written in the Management Machine which is Windows 11 GUI Machine._
+**_Remember:_** _All  codes were written in the Management Machine which is Windows 11 GUI Machine and uploaded to Remote Machine._
 
 ### Connect to Remote Server through Management Machine.
 #### Create variables for easy connection in next time.
