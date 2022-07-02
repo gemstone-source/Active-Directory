@@ -171,5 +171,6 @@ SamAccountName    : Employee
 SID               : S-1-5-21-2354715860-4278133880-137312399-1613
 ```
 
-#### Trouble shout if thing goes wrong.
+#### Connect to Domain.
+Start up any new Machine that is is connected to the Domain and login as User `bob` or `alice` with password `P@ssw0rd789`
 
