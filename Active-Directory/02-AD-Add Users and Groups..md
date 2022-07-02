@@ -21,7 +21,7 @@ In order to add a large of users in Active Directory there should a script which
 	
  You can check both `Json` and `Powershell` scripts int the following folder [code](https).
  
-**_Remember: _** _All  codes were written in the Management Machine which is GUI Machine._
+**_Remember:_** _All  codes were written in the Management Machine which is GUI Machine._
 
 ### Connect to Remote Server through Management Machine.
 #### Create variables for easy connection in next time.
