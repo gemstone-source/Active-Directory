@@ -37,7 +37,7 @@ $creds = (Get-Credential)
 ```
 $dc = New-PSSession 192.168.225.155 -Credential $creds
 ```
-#### Enter into Remote Machine via Session.
+#### Connect to Remote Machine.
 1. Change `New-PSSession` to `Enter-PSSession`.
 ```
 $dc = Enter-PSSession 192.168.225.155 -Credential $creds
@@ -68,7 +68,7 @@ Mode LastWriteTime Length Name
 ```
 Both files can be seen as successfully uploaded to remote Machine.
 
-#### Ad Users to Active Directory.
+#### Add Users to Active Directory.
 Execute `Powershell` script and pass `Json` file as an argument.
 ```
 [192.168.225.155]: PS C:\Windows\Tasks> .\gen_ad.ps1 .\ad_schema.json
@@ -93,6 +93,7 @@ SID               : S-1-5-21-2354715860-4278133880-137312399-1613
 ```
 
 #### Verify if new Users have been added to the Active Directory.
+Use `Get-user` command and filter all with `*` to see all Active Directory users
 ```
 [192.168.225.155]: PS C:\Windows\Tasks> Get-ADUser
 
