@@ -157,7 +157,6 @@ SID               : S-1-5-21-2354715860-4278133880-137312399-1615
 Surname           : Ob
 UserPrincipalName : bob@xyz.com
 ```
-
 #### Check for Group Employee.
 ```
 [192.168.225.155]: PS C:\Windows\Tasks> Get-ADGroup -Identity Employee  
